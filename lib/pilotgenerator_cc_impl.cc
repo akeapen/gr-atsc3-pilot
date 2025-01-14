@@ -871,15 +871,27 @@ namespace gr {
           scattered_power = scattered_power_table[PILOT_SP3_2][pilotboost];
           break;
       }
-      power = pow(10, preamble_power / 20.0);
+      // power = pow(10, preamble_power / 20.0);
+      // pr_bpsk[0] = gr_complex(power, 0.0);
+      // pr_bpsk[1] = gr_complex(-(power), 0.0);
+      // power = pow(10, scattered_power / 20.0);
+      // sp_bpsk[0] = gr_complex(power, 0.0);
+      // sp_bpsk[1] = gr_complex(-(power), 0.0);
+      // power = pow(10, 8.52 / 20.0);
+      // cp_bpsk[0] = gr_complex(power, 0.0);
+      // cp_bpsk[1] = gr_complex(-(power), 0.0);
+      
+      // AKE 13-Jan-2025: Use the new power values
+      power = 1.0;
       pr_bpsk[0] = gr_complex(power, 0.0);
       pr_bpsk[1] = gr_complex(-(power), 0.0);
-      power = pow(10, scattered_power / 20.0);
+      power = 1.0;
       sp_bpsk[0] = gr_complex(power, 0.0);
       sp_bpsk[1] = gr_complex(-(power), 0.0);
-      power = pow(10, 8.52 / 20.0);
+      power = 1.0;
       cp_bpsk[0] = gr_complex(power, 0.0);
       cp_bpsk[1] = gr_complex(-(power), 0.0);
+
       init_prbs();
       if (paprmode != PAPR_TR) {
         papr_cells = 0;
