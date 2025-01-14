@@ -882,13 +882,13 @@ namespace gr {
       // cp_bpsk[1] = gr_complex(-(power), 0.0);
       
       // AKE 13-Jan-2025: Use the new power values
-      power = 1.0;
+      power = 0.0; // linear power
       pr_bpsk[0] = gr_complex(power, 0.0);
       pr_bpsk[1] = gr_complex(-(power), 0.0);
-      power = 1.0;
+      // power = 1.0;
       sp_bpsk[0] = gr_complex(power, 0.0);
       sp_bpsk[1] = gr_complex(-(power), 0.0);
-      power = 1.0;
+      // power = 1.0;
       cp_bpsk[0] = gr_complex(power, 0.0);
       cp_bpsk[1] = gr_complex(-(power), 0.0);
 
